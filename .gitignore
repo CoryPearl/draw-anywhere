@@ -14,6 +14,8 @@ service-account*.json
 google-services.json
 GoogleService-Info.plist
 
+codes.txt
+
 # Project config files that may contain Wi-Fi passwords, API keys, or private URLs
 ESP32Firmware/main/user_config.local.h
 ESP32Firmware/main/secrets.h

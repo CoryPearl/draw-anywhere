@@ -12,7 +12,7 @@ The current active backend is Firebase. Keep your actual Firebase URL in local i
 
 ## How It Works
 
-1. Draw a 64x64 image in the web app or iOS app.
+1. Draw a 64x64 image in the web app or iOS app. [Web App](https://drawanywhere.vercel.app/)
 2. Press `Send`.
 3. The frontend writes the latest frame to Firebase as JSON.
 4. The ESP32-S3 connects to Wi-Fi and polls Firebase.
@@ -127,23 +127,23 @@ Replace `/dev/cu.usbmodemXXXX` with your actual ESP32 serial port.
 
 Default GPIOs:
 
-| HUB75 | ESP32-S3 GPIO |
-| --- | ---: |
-| R1 | 4 |
-| G1 | 5 |
-| B1 | 6 |
-| R2 | 7 |
-| G2 | 15 |
-| B2 | 16 |
-| A | 8 |
-| B | 9 |
-| C | 10 |
-| D | 11 |
-| E | 12 |
-| LAT/STB | 13 |
-| OE | 14 |
-| CLK | 21 |
-| GND | GND |
+| HUB75   | ESP32-S3 GPIO |
+| ------- | ------------: |
+| R1      |             4 |
+| G1      |             5 |
+| B1      |             6 |
+| R2      |             7 |
+| G2      |            15 |
+| B2      |            16 |
+| A       |             8 |
+| B       |             9 |
+| C       |            10 |
+| D       |            11 |
+| E       |            12 |
+| LAT/STB |            13 |
+| OE      |            14 |
+| CLK     |            21 |
+| GND     |           GND |
 
 Power the LED matrix from a separate 5 V supply. Do not power the matrix from the ESP32 board. Tie ESP32 GND and matrix power-supply GND together.
 
