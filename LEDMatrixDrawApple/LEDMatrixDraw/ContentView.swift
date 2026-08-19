@@ -944,9 +944,6 @@ struct ContentView: View {
         let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
             .replacingOccurrences(of: "cory-pearl.gt.lc", with: "cory-pearl.gt.tc")
         guard !trimmed.isEmpty else { return "" }
-        if trimmed.contains("cory-pearl.gt.tc/matrix/api.php") {
-            return defaultBackendURL
-        }
         if trimmed.hasPrefix("http://") || trimmed.hasPrefix("https://") {
             return trimmed
         }
@@ -1060,9 +1057,6 @@ struct SettingsView: View {
         let trimmed = value.trimmingCharacters(in: .whitespacesAndNewlines)
             .replacingOccurrences(of: "cory-pearl.gt.lc", with: "cory-pearl.gt.tc")
         guard !trimmed.isEmpty else { return "" }
-        if trimmed.contains("cory-pearl.gt.tc/matrix/api.php") {
-            return defaultBackendURL
-        }
         if trimmed.hasPrefix("http://") || trimmed.hasPrefix("https://") {
             return trimmed
         }

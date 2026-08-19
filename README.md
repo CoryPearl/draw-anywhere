@@ -6,7 +6,6 @@ Draw Anywhere is a 64x64 RGB LED matrix drawing project. It includes:
 - A SwiftUI iOS app in `LEDMatrixDrawApple/`
 - ESP-IDF firmware for an ESP32-S3 in `ESP32Firmware/`
 - A Firebase Realtime Database relay for sending drawings to the ESP32
-- A legacy PHP backend in `PHPBackend/` kept as an optional fallback
 
 The current active backend is Firebase. Keep your actual Firebase URL in local ignored config files, not in committed source.
 
@@ -167,4 +166,3 @@ If `lit_pixels=0`, Firebase currently contains a blank drawing.
 - `USER_HUB75_TARGET_CLOCK_HZ` is set to 20 MHz as the intended target.
 - `USER_HUB75_PULSE_DELAY_CYCLES` can be adjusted if the panel does not latch data reliably.
 - TLS certificate verification is currently relaxed for ESP32 Firebase testing. For production, use a proper CA/root certificate setup and disable insecure TLS.
-- `PHPBackend/` is legacy and not required for the current Firebase setup.
