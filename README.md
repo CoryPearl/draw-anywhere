@@ -1,5 +1,7 @@
 # Draw Anywhere
 
+![Demo](demo.png)
+
 Draw Anywhere is a 64x64 RGB LED matrix drawing project. It includes:
 
 - A static HTML drawing app in `StaticHTML/`
