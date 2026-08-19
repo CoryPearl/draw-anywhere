@@ -1,0 +1,10 @@
+DirectoryIndex api.php
+Options -Indexes
+
+<Files "matrix_latest.json">
+    Require all denied
+</Files>
+
+<Files "config.php">
+    Require all denied
+</Files>

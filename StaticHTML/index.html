@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Draw Anywhere</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div>
+          <h1>Draw Anywhere</h1>
+          <p>64x64 RGB editor</p>
+        </div>
+      </div>
+
+      <section class="panel">
+        <h2>Tools</h2>
+        <div class="tool-grid" id="tools">
+          <button class="tool active" data-tool="brush" title="Brush">Brush</button>
+          <button class="tool" data-tool="eraser" title="Eraser">Erase</button>
+          <button class="tool" data-tool="fill" title="Fill">Fill</button>
+          <button class="tool" data-tool="line" title="Line">Line</button>
+          <button class="tool" data-tool="rect" title="Rectangle">Rect</button>
+          <button class="tool" data-tool="circle" title="Ellipse">Ellipse</button>
+          <button class="tool" data-tool="text" title="Text">Text</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Color</h2>
+        <div class="color-row">
+          <input id="colorPicker" type="color" value="#ff3158" aria-label="Selected color">
+          <input id="hexColor" type="text" value="#ff3158" maxlength="7" aria-label="Hex color">
+        </div>
+        <label class="field-label" for="brushSize">Brush size</label>
+        <input id="brushSize" type="range" min="1" max="8" value="1">
+        <label class="field-label" for="brightness">Brightness (<span id="brightnessValue">100</span>%)</label>
+        <input id="brightness" type="range" min="1" max="100" value="100">
+      </section>
+
+      <section class="panel">
+        <h2>Text</h2>
+        <textarea id="textInput" rows="3" aria-label="Text to draw">Hi</textarea>
+        <div class="split">
+          <label>
+            Scale
+            <input id="textSize" type="number" min="1" max="4" value="1">
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Image</h2>
+        <label class="upload-card" id="imageDropZone" for="imageUpload">
+          <span class="upload-icon" aria-hidden="true"></span>
+          <span>
+            <strong>Choose image</strong>
+            <small id="imageFileName">Drop or choose PNG, JPG, or GIF</small>
+          </span>
+        </label>
+        <input id="imageUpload" class="visually-hidden" type="file" accept="image/*">
+      </section>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div>
+          <strong id="toolLabel">Brush</strong>
+          <span id="status">Ready</span>
+        </div>
+        <div class="actions">
+          <button id="undoBtn" title="Undo" disabled>Undo</button>
+          <button id="redoBtn" title="Redo" disabled>Redo</button>
+          <button id="clearBtn">Clear</button>
+          <button id="settingsBtn">Settings</button>
+          <button id="sendBtn" class="primary">Send</button>
+        </div>
+      </header>
+
+      <section class="canvas-wrap">
+        <canvas id="matrix" width="64" height="64" aria-label="64 by 64 LED matrix drawing canvas"></canvas>
+        <div id="imagePopup" class="image-popup" hidden>
+          <label for="imageSize">Image size</label>
+          <input id="imageSize" type="range" min="4" max="64" value="64" disabled>
+          <div class="image-popup-actions">
+            <button id="cancelImageBtn" disabled>Cancel</button>
+            <button id="placeImageBtn" class="primary" disabled>Place</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="settingsDialog">
+    <form method="dialog" class="settings">
+      <header>
+        <h2>Settings</h2>
+        <button value="close" aria-label="Close settings">x</button>
+      </header>
+      <label>
+        Firebase URL
+        <input id="espUrl" type="url" placeholder="https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json">
+      </label>
+      <label class="switch-row">
+        <span>Dark mode</span>
+        <input id="themeToggle" type="checkbox">
+      </label>
+      <p>Send writes the latest 64x64 RGB frame to Firebase Realtime Database.</p>
+      <menu>
+        <button value="close" class="primary">Done</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

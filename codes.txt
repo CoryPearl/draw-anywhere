@@ -1,0 +1,2 @@
+Account Password = 0Mthje5ej4OdmEa
+device-key = b54f08623ae4039f55bcecba4961037fb4513d2ba9cb2b0667c5db970ac94911

@@ -1,0 +1,68 @@
+# Local secrets and environment files
+.env
+.env.*
+*.env
+*.local
+*.secret
+*.secrets
+secrets/
+Secrets/
+config.local.*
+firebase-service-account*.json
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+
+# Project config files that may contain Wi-Fi passwords, API keys, or private URLs
+ESP32Firmware/main/user_config.local.h
+ESP32Firmware/main/secrets.h
+ESP32Firmware/main/wifi_config.h
+PHPBackend/config.local.php
+PHPBackend/secrets.php
+
+# ESP-IDF build output
+ESP32Firmware/build/
+ESP32Firmware/build_*/
+ESP32Firmware/managed_components/
+ESP32Firmware/dependencies.lock
+ESP32Firmware/sdkconfig.old
+
+# Xcode and Swift build output
+DerivedData/
+LEDMatrixDrawApple/DerivedData/
+*.xcuserstate
+*.xcuserdata/
+xcuserdata/
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Node/static tooling, if added later
+node_modules/
+dist/
+.vite/
+.parcel-cache/
+coverage/
+
+# Python local tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+

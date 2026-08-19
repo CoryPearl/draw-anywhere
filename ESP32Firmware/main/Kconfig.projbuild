@@ -1,0 +1,85 @@
+menu "LED Matrix Firmware"
+
+    config LED_MATRIX_STA_SSID
+        string "Home Wi-Fi SSID for backend polling"
+        default ""
+        help
+            Set this to the Wi-Fi network the ESP32-S3 should join.
+
+    config LED_MATRIX_STA_PASSWORD
+        string "Home Wi-Fi password"
+        default ""
+
+    config LED_MATRIX_BACKEND_URL
+        string "Firebase latest-frame URL"
+        default "https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json"
+        help
+            Example: https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+
+    config LED_MATRIX_BACKEND_POLL_MS
+        int "Firebase backend poll interval ms"
+        range 500 10000
+        default 1500
+
+    config LED_MATRIX_BRIGHTNESS
+        int "Default brightness percent"
+        range 1 100
+        default 35
+
+    config LED_MATRIX_PIN_R1
+        int "HUB75 R1 GPIO"
+        default 4
+
+    config LED_MATRIX_PIN_G1
+        int "HUB75 G1 GPIO"
+        default 5
+
+    config LED_MATRIX_PIN_B1
+        int "HUB75 B1 GPIO"
+        default 6
+
+    config LED_MATRIX_PIN_R2
+        int "HUB75 R2 GPIO"
+        default 7
+
+    config LED_MATRIX_PIN_G2
+        int "HUB75 G2 GPIO"
+        default 15
+
+    config LED_MATRIX_PIN_B2
+        int "HUB75 B2 GPIO"
+        default 16
+
+    config LED_MATRIX_PIN_A
+        int "HUB75 A GPIO"
+        default 8
+
+    config LED_MATRIX_PIN_B
+        int "HUB75 B GPIO"
+        default 9
+
+    config LED_MATRIX_PIN_C
+        int "HUB75 C GPIO"
+        default 10
+
+    config LED_MATRIX_PIN_D
+        int "HUB75 D GPIO"
+        default 11
+
+    config LED_MATRIX_PIN_E
+        int "HUB75 E GPIO"
+        default 12
+
+    config LED_MATRIX_PIN_LAT
+        int "HUB75 LAT/STB GPIO"
+        default 13
+
+    config LED_MATRIX_PIN_OE
+        int "HUB75 OE GPIO"
+        default 14
+
+    config LED_MATRIX_PIN_CLK
+        int "HUB75 CLK GPIO"
+        default 21
+
+endmenu
