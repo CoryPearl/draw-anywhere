@@ -85,8 +85,7 @@ const PIXEL_FONT = {
 const savedTheme = localStorage.getItem('matrix-theme') || 'light';
 document.documentElement.classList.toggle('dark', savedTheme === 'dark');
 themeToggle.checked = savedTheme === 'dark';
-const DEFAULT_BACKEND_URL =
-  'https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json';
+const DEFAULT_BACKEND_URL = window.DRAW_ANYWHERE_BACKEND_URL || '';
 espUrl.value = normalizeBackendUrl(
   localStorage.getItem('matrix-backend-url') ||
     localStorage.getItem('matrix-esp-url') ||
@@ -103,7 +102,7 @@ function normalizeBackendUrl(value) {
     .replace('cory-pearl.gt.lc', 'cory-pearl.gt.tc');
   if (!trimmed) return '';
   if (/cory-pearl\.gt\.tc\/matrix\/api\.php/i.test(trimmed)) {
-    return DEFAULT_BACKEND_URL;
+    return '';
   }
   if (
     location.protocol === 'https:' &&

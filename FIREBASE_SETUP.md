@@ -2,10 +2,10 @@
 
 Draw Anywhere now uses Firebase Realtime Database as the shared backend.
 
-Database URL:
+Your database URL should look like this:
 
 ```text
-https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+https://your-database.firebaseio.com/matrix/latest.json
 ```
 
 The web app and iOS app write the newest frame with `PUT`. The ESP32 reads the same URL with `GET`.
@@ -29,11 +29,7 @@ These rules make the matrix endpoint public. That is fine for testing, but not p
 
 ## Expected Data
 
-After pressing Send, this URL should show JSON instead of `Permission denied`:
-
-```text
-https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
-```
+After pressing Send, your private Firebase URL should show JSON instead of `Permission denied`.
 
 The JSON should include:
 

@@ -26,10 +26,10 @@ idf.py -p /dev/cu.usbserial-XXXX flash monitor
 
 ## Firebase Payload
 
-The web and iOS apps write the latest frame with `PUT` to:
+The web and iOS apps write the latest frame with `PUT` to your private Firebase latest-frame URL, which should look like:
 
 ```text
-https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+https://your-database.firebaseio.com/matrix/latest.json
 ```
 
 The ESP32 polls the same URL. The stored JSON looks like:
@@ -89,12 +89,12 @@ For backend relay mode, set:
 
 - `Home Wi-Fi SSID for backend polling`
 - `Home Wi-Fi password`
-- `Firebase latest-frame URL`
+- `Backend latest-frame URL`
 
 Example ESP32 polling URL:
 
 ```text
-https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+https://your-database.firebaseio.com/matrix/latest.json
 ```
 
 Use a separate 5 V power supply for the panel. Do not power a 64x64 RGB matrix from the ESP32 board. Tie ESP32 GND and panel power-supply GND together.

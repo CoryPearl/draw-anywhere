@@ -11,13 +11,13 @@ menu "LED Matrix Firmware"
         default ""
 
     config LED_MATRIX_BACKEND_URL
-        string "Firebase latest-frame URL"
-        default "https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json"
+        string "Backend latest-frame URL"
+        default ""
         help
-            Example: https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+            Set this to your private Firebase Realtime Database latest-frame URL.
 
     config LED_MATRIX_BACKEND_POLL_MS
-        int "Firebase backend poll interval ms"
+        int "Backend poll interval ms"
         range 500 10000
         default 1500
 

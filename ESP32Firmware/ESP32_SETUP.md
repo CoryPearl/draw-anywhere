@@ -14,10 +14,10 @@ Do not power the LED matrix from the ESP32 board.
 
 ## Firebase URL
 
-The firmware, web app, and iOS app are already set to use:
+Set the firmware, web app, and iOS app to use your private Firebase latest-frame URL. It should look like:
 
 ```text
-https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+https://your-database.firebaseio.com/matrix/latest.json
 ```
 
 ## Wiring
@@ -57,7 +57,7 @@ Set Wi-Fi and backend:
 ```c
 #define USER_WIFI_SSID "Your Wi-Fi Name"
 #define USER_WIFI_PASSWORD "Your Wi-Fi Password"
-#define USER_BACKEND_URL "https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json"
+#define USER_BACKEND_URL "https://your-database.firebaseio.com/matrix/latest.json"
 #define USER_BACKEND_ALLOW_INSECURE_TLS 0
 ```
 
@@ -96,7 +96,7 @@ You can set:
 
 - `Home Wi-Fi SSID for backend polling`
 - `Home Wi-Fi password`
-- `Firebase latest-frame URL`
+- `Backend latest-frame URL`
 
 Values in `main/user_config.h` are the main project config. Prefer changing that file for normal setup.
 
@@ -137,7 +137,7 @@ In `monitor`, look for messages like:
 ```text
 Connecting to Wi-Fi SSID ...
 Wi-Fi got IP: 192.168.x.x
-Backend polling enabled: https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+Backend polling enabled: ...
 Applied backend matrix frame
 ```
 
@@ -152,7 +152,7 @@ If you do not see `Wi-Fi got IP`, the ESP32 is not fully connected to Wi-Fi yet.
 4. Open:
 
 ```text
-https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+https://your-database.firebaseio.com/matrix/latest.json
 ```
 
 You should see a large JSON response with `width`, `height`, `frameHex`, and `sequence`.

@@ -18,7 +18,7 @@
 #endif
 
 #ifndef USER_BACKEND_URL
-#define USER_BACKEND_URL "https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json"
+#define USER_BACKEND_URL ""
 #endif
 
 #ifndef USER_BACKEND_FALLBACK_URL

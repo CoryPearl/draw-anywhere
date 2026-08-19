@@ -8,11 +8,7 @@ Draw Anywhere is a 64x64 RGB LED matrix drawing project. It includes:
 - A Firebase Realtime Database relay for sending drawings to the ESP32
 - A legacy PHP backend in `PHPBackend/` kept as an optional fallback
 
-The current active backend is Firebase:
-
-```text
-https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
-```
+The current active backend is Firebase. Keep your actual Firebase URL in local ignored config files, not in committed source.
 
 ## How It Works
 
@@ -69,7 +65,7 @@ Open this project in Xcode:
 LEDMatrixDrawApple/LEDMatrixDraw.xcodeproj
 ```
 
-Build and run the `LEDMatrixDraw` scheme on a simulator or real iPhone. The app defaults to the Firebase URL above and sends drawings using HTTPS.
+Build and run the `LEDMatrixDraw` scheme on a simulator or real iPhone. Add your backend URL in Settings before sending drawings.
 
 ## Firebase Setup
 
@@ -109,10 +105,10 @@ Set your Wi-Fi:
 #define USER_WIFI_PASSWORD "Your Wi-Fi Password"
 ```
 
-The backend URL is already set to Firebase:
+Put your private backend URL in the ignored local config:
 
 ```c
-#define USER_BACKEND_URL "https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json"
+#define USER_BACKEND_URL "https://your-database.firebaseio.com/matrix/latest.json"
 ```
 
 Build and flash:
@@ -159,7 +155,7 @@ Successful Firebase polling should show:
 
 ```text
 Wi-Fi got IP: ...
-Backend polling enabled: https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+Backend polling enabled: ...
 Applied backend matrix frame: lit_pixels=...
 ```
 

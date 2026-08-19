@@ -1,9 +1,9 @@
 # Legacy InfinityFree PHP Backend
 
-The active Draw Anywhere setup now uses Firebase Realtime Database:
+The active Draw Anywhere setup now uses Firebase Realtime Database. Keep your real Firebase URL in ignored local config files.
 
 ```text
-https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json
+https://your-database.firebaseio.com/matrix/latest.json
 ```
 
 Keep this PHP backend only as an optional fallback for InfinityFree hosting.

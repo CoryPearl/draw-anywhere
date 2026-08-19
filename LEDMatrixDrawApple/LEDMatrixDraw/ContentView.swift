@@ -5,7 +5,7 @@ import UIKit
 
 private let matrixSize = 64
 private let developmentTLSFallbackHosts: Set<String> = []
-private let defaultBackendURL = "https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json"
+private let defaultBackendURL = ""
 
 struct RGB: Codable, Equatable {
     var r: UInt8
@@ -1039,7 +1039,7 @@ struct SettingsView: View {
                     Toggle("Dark mode", isOn: $darkMode)
                 }
                 Section {
-                    Text("Send writes the latest 64x64 RGB frame to Firebase Realtime Database.")
+                    Text("Send writes the latest 64x64 RGB frame to your configured backend.")
                         .foregroundStyle(.secondary)
                 }
             }

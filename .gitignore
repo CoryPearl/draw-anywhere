@@ -8,6 +8,7 @@
 secrets/
 Secrets/
 config.local.*
+StaticHTML/config.local.js
 firebase-service-account*.json
 service-account*.json
 google-services.json
@@ -65,4 +66,3 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
-

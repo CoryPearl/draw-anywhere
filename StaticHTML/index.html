@@ -103,20 +103,21 @@
         <button value="close" aria-label="Close settings">x</button>
       </header>
       <label>
-        Firebase URL
-        <input id="espUrl" type="url" placeholder="https://draw-anywhere-8ff7d-default-rtdb.firebaseio.com/matrix/latest.json">
+        Backend URL
+        <input id="espUrl" type="url" placeholder="https://your-database.firebaseio.com/matrix/latest.json">
       </label>
       <label class="switch-row">
         <span>Dark mode</span>
         <input id="themeToggle" type="checkbox">
       </label>
-      <p>Send writes the latest 64x64 RGB frame to Firebase Realtime Database.</p>
+      <p>Send writes the latest 64x64 RGB frame to your configured backend.</p>
       <menu>
         <button value="close" class="primary">Done</button>
       </menu>
     </form>
   </dialog>
 
+  <script src="config.local.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
